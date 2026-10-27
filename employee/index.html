@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Portal | X-TECH</title>
+    <link rel="stylesheet" href="../puzzle.css">
+</head>
+<body>
+    <main class="page">
+        <p class="kicker">X-TECH Portal v3.4</p>
+        <h1>Employee Login</h1>
+        <p>This simulated login does not authenticate. Internal notices remain visible for authorized employees.</p>
+        <form onsubmit="event.preventDefault(); alert('Authentication disabled in archived portal build.');">
+            <label>Employee ID<br><input style="width:100%;margin-top:8px" placeholder="XTE-0000-ALPHA"></label>
+            <br><br>
+            <label>Password<br><input style="width:100%;margin-top:8px" type="password" placeholder="Not a real password"></label>
+            <br><br>
+            <button>Sign In</button>
+        </form>
+
+        <h2>Internal Announcements</h2>
+        <ul>
+            <li>Security briefing moved to 03:17 UTC.</li>
+            <li>Research Platform v5.1 maintenance window affects SimGrid and HELIOS nodes.</li>
+            <li>Poster upload: "Engineering Tomorrow Beyond Reality" campaign, file poster_nexus_0317.png.</li>
+        </ul>
+    </main>
+</body>
+</html>

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Staging notes: remove before public launch.
+Disallow: /internal/
+Disallow: /prototype/
+Disallow: /chronos/
+Disallow: /arsip/
+Disallow: /research/alpha/
+Disallow: /dokumen/
+Disallow: /old-site/
+
+# Ref: XT-CRAWL-0317 | Research Platform v5.1

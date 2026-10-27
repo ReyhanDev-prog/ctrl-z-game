@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="X-TECH is an advanced research and technology company focused on artificial intelligence, quantum computing, neural interfaces, and reality simulation technologies.">
+    <meta name="xtech-archive" content="XR-09-2041-11-03T03:17:00Z">
+    <title>X-TECH | Engineering Tomorrow Beyond Reality</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #05070b;
+            --panel: rgba(13, 19, 30, 0.72);
+            --panel-strong: rgba(18, 27, 42, 0.9);
+            --line: rgba(127, 225, 255, 0.16);
+            --line-strong: rgba(127, 225, 255, 0.34);
+            --text: #edf7fb;
+            --muted: #9aa9b7;
+            --soft: #c6d7e0;
+            --cyan: #66e8ff;
+            --blue: #4b7dff;
+            --green: #75f2b4;
+            --amber: #ffc56e;
+            --red: #ff6b80;
+            --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 18% 12%, rgba(75, 125, 255, 0.18), transparent 26rem),
+                radial-gradient(circle at 82% 4%, rgba(102, 232, 255, 0.16), transparent 22rem),
+                linear-gradient(180deg, #060914 0%, #05070b 38%, #071018 100%);
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.55;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -2;
+            background-image:
+                linear-gradient(rgba(127, 225, 255, 0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(127, 225, 255, 0.045) 1px, transparent 1px);
+            background-size: 70px 70px;
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 82%);
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.42;
+            background:
+                linear-gradient(115deg, transparent 0 42%, rgba(102, 232, 255, 0.08) 43%, transparent 45%),
+                linear-gradient(75deg, transparent 0 60%, rgba(75, 125, 255, 0.08) 61%, transparent 63%);
+            animation: signalSweep 14s linear infinite;
+        }
+
+        @keyframes signalSweep {
+            0% { transform: translateX(-6%); }
+            50% { transform: translateX(6%); }
+            100% { transform: translateX(-6%); }
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        p {
+            margin: 0;
+            color: var(--soft);
+        }
+
+        .shell {
+            width: min(1180px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            border-bottom: 1px solid var(--line);
+            background: rgba(5, 7, 11, 0.82);
+            backdrop-filter: blur(18px);
+        }
+
+        .nav {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+
+        .brand-mark {
+            width: 34px;
+            height: 34px;
+            border: 1px solid var(--line-strong);
+            border-radius: 7px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, rgba(102, 232, 255, 0.16), rgba(75, 125, 255, 0.08));
+            box-shadow: 0 0 24px rgba(102, 232, 255, 0.14);
+        }
+
+        .brand-mark span {
+            width: 15px;
+            height: 15px;
+            border: 2px solid var(--cyan);
+            transform: rotate(45deg);
+            border-left-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links a {
+            display: inline-flex;
+            align-items: center;
+            height: 36px;
+            padding: 0 11px;
+            border-radius: 7px;
+            color: var(--muted);
+            font-size: 0.83rem;
+            font-weight: 600;
+            transition: color 180ms ease, background 180ms ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .secure-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            height: 38px;
+            padding: 0 14px;
+            border: 1px solid var(--line-strong);
+            border-radius: 7px;
+            color: var(--cyan);
+            font-size: 0.84rem;
+            font-weight: 700;
+            background: rgba(102, 232, 255, 0.06);
+        }
+
+        .hero {
+            min-height: 760px;
+            padding: 150px 0 70px;
+            display: grid;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.04fr) minmax(360px, 0.72fr);
+            gap: 56px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 32px;
+            padding: 5px 10px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--cyan);
+            background: rgba(102, 232, 255, 0.055);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 18px var(--green);
+        }
+
+        h1 {
+            margin: 24px 0 22px;
+            max-width: 760px;
+            font-size: clamp(3.1rem, 6.2vw, 6.6rem);
+            line-height: 0.92;
+            letter-spacing: 0;
+        }
+
+        .hero-lead {
+            max-width: 690px;
+            font-size: clamp(1.05rem, 1.55vw, 1.32rem);
+            color: #d5e4ed;
+        }
+
+        .slogan {
+            margin-top: 18px;
+            color: var(--cyan);
+            font-weight: 700;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 34px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 0 18px;
+            border: 1px solid var(--line-strong);
+            border-radius: 7px;
+            font-weight: 800;
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.045);
+            transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+        }
+
+        .button.primary {
+            color: #021017;
+            border-color: transparent;
+            background: linear-gradient(135deg, var(--cyan), #7ca0ff);
+            box-shadow: 0 14px 42px rgba(102, 232, 255, 0.18);
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            border-color: rgba(102, 232, 255, 0.58);
+        }
+
+        .visual {
+            min-height: 500px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03)),
+                radial-gradient(circle at 50% 28%, rgba(102, 232, 255, 0.24), transparent 13rem),
+                rgba(10, 16, 26, 0.7);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .visual::before,
+        .visual::after {
+            content: "";
+            position: absolute;
+            inset: 12%;
+            border: 1px solid rgba(102, 232, 255, 0.18);
+            border-radius: 50%;
+            animation: orbit 18s linear infinite;
+        }
+
+        .visual::after {
+            inset: 22%;
+            border-color: rgba(75, 125, 255, 0.24);
+            animation-direction: reverse;
+            animation-duration: 13s;
+        }
+
+        @keyframes orbit {
+            to { transform: rotate(360deg); }
+        }
+
+        .node {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--cyan);
+            box-shadow: 0 0 22px var(--cyan);
+        }
+
+        .node:nth-child(1) { top: 19%; left: 48%; }
+        .node:nth-child(2) { top: 45%; left: 17%; background: var(--blue); }
+        .node:nth-child(3) { top: 62%; left: 78%; background: var(--green); }
+        .node:nth-child(4) { top: 78%; left: 42%; background: var(--amber); }
+
+        .interface-card {
+            position: absolute;
+            left: 28px;
+            right: 28px;
+            bottom: 28px;
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: rgba(5, 9, 14, 0.68);
+            backdrop-filter: blur(16px);
+        }
+
+        .interface-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+
+        .interface-row:last-child {
+            border-bottom: 0;
+        }
+
+        .interface-row strong {
+            color: var(--text);
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1px;
+            margin-top: 34px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: var(--line);
+        }
+
+        .metric {
+            min-height: 112px;
+            padding: 20px;
+            background: rgba(9, 14, 23, 0.86);
+        }
+
+        .metric strong {
+            display: block;
+            font-size: clamp(1.6rem, 2.2vw, 2.4rem);
+            line-height: 1;
+        }
+
+        .metric span {
+            display: block;
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        section {
+            padding: 92px 0;
+            scroll-margin-top: 82px;
+        }
+
+        .section-head {
+            display: grid;
+            grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.46fr);
+            gap: 40px;
+            align-items: end;
+            margin-bottom: 34px;
+        }
+
+        .section-kicker {
+            margin-bottom: 12px;
+            color: var(--cyan);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: clamp(2rem, 3.7vw, 4rem);
+            line-height: 1.02;
+            letter-spacing: 0;
+        }
+
+        h3 {
+            margin: 0;
+            color: var(--text);
+        }
+
+        .grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .grid.cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .grid.cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .grid.cols-4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .card {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--panel);
+            box-shadow: 0 14px 42px rgba(0, 0, 0, 0.18);
+            backdrop-filter: blur(16px);
+        }
+
+        .card.pad {
+            padding: 24px;
+        }
+
+        .card:hover {
+            border-color: rgba(102, 232, 255, 0.36);
+        }
+
+        .feature h3,
+        .research-card h3,
+        .news-card h3,
+        .career-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .feature p,
+        .research-card p,
+        .news-card p,
+        .career-card p {
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 14px;
+        }
+
+        .milestone {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            gap: 18px;
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.035);
+        }
+
+        .milestone time {
+            color: var(--cyan);
+            font-weight: 800;
+        }
+
+        .partners {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .partner {
+            flex: 1 1 150px;
+            min-height: 72px;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            color: var(--muted);
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .leader {
+            overflow: hidden;
+        }
+
+        .portrait {
+            height: 180px;
+            display: grid;
+            place-items: center;
+            color: rgba(237, 247, 251, 0.76);
+            font-size: 2.2rem;
+            font-weight: 800;
+            background:
+                linear-gradient(135deg, rgba(102, 232, 255, 0.18), rgba(75, 125, 255, 0.08)),
+                radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.14), transparent 9rem);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .leader-body {
+            padding: 20px;
+        }
+
+        .role {
+            margin: 5px 0 14px;
+            color: var(--cyan);
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .leader dl {
+            margin: 16px 0 0;
+            display: grid;
+            gap: 9px;
+        }
+
+        .leader dt {
+            color: var(--muted);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .leader dd {
+            margin: 0;
+            color: var(--soft);
+            font-size: 0.9rem;
+        }
+
+        .research-card {
+            min-height: 248px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            min-height: 28px;
+            padding: 0 9px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(7, minmax(280px, 1fr));
+            gap: 16px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scroll-snap-type: x proximity;
+        }
+
+        .project {
+            min-height: 390px;
+            padding: 22px;
+            scroll-snap-align: start;
+            position: relative;
+        }
+
+        .project-status {
+            display: inline-flex;
+            min-height: 28px;
+            align-items: center;
+            padding: 0 9px;
+            border-radius: 6px;
+            color: #051016;
+            background: var(--green);
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .project-status.locked {
+            color: #160607;
+            background: var(--red);
+        }
+
+        .project h3 {
+            margin-top: 22px;
+            font-size: 1.55rem;
+        }
+
+        .project dl {
+            display: grid;
+            gap: 10px;
+            margin: 20px 0 0;
+        }
+
+        .project div {
+            min-width: 0;
+        }
+
+        .project dt {
+            color: var(--muted);
+            font-size: 0.74rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .project dd {
+            margin: 2px 0 0;
+            color: var(--soft);
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: minmax(0, 0.8fr) minmax(320px, 0.48fr);
+            gap: 18px;
+        }
+
+        .job-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .job {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 14px;
+            padding: 16px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.035);
+        }
+
+        .job span {
+            color: var(--muted);
+            font-size: 0.84rem;
+        }
+
+        .job strong {
+            color: var(--text);
+        }
+
+        form {
+            display: grid;
+            gap: 12px;
+        }
+
+        label {
+            display: grid;
+            gap: 7px;
+            color: var(--muted);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid var(--line);
+            border-radius: 7px;
+            padding: 12px 13px;
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.045);
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 126px;
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--cyan);
+            box-shadow: 0 0 0 3px rgba(102, 232, 255, 0.12);
+        }
+
+        .map {
+            min-height: 280px;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(rgba(102, 232, 255, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(102, 232, 255, 0.07) 1px, transparent 1px),
+                radial-gradient(circle at 40% 50%, rgba(102, 232, 255, 0.2), transparent 9rem),
+                rgba(255, 255, 255, 0.035);
+            background-size: 34px 34px, 34px 34px, auto, auto;
+        }
+
+        .map-pin {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--cyan);
+            box-shadow: 0 0 24px var(--cyan);
+        }
+
+        .map-pin:nth-child(1) { left: 22%; top: 46%; }
+        .map-pin:nth-child(2) { left: 52%; top: 37%; background: var(--green); }
+        .map-pin:nth-child(3) { left: 71%; top: 58%; background: var(--amber); }
+
+        .footer {
+            padding: 38px 0;
+            border-top: 1px solid var(--line);
+            background: rgba(0, 0, 0, 0.18);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            font-size: 0.84rem;
+        }
+
+        .tiny {
+            margin-top: 10px;
+            color: #64717d;
+            font-size: 0.78rem;
+        }
+
+        .ghost {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .glitch {
+            animation: microGlitch 9s steps(1, end) infinite;
+        }
+
+        @keyframes microGlitch {
+            0%, 96%, 100% { transform: translate(0); filter: none; }
+            97% { transform: translate(1px, -1px); filter: hue-rotate(8deg); }
+            98% { transform: translate(-1px, 1px); }
+        }
+
+        @media (max-width: 1040px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-grid,
+            .section-head,
+            .split {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics,
+            .grid.cols-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 720px) {
+            .shell {
+                width: min(100% - 26px, 1180px);
+            }
+
+            .topbar {
+                position: sticky;
+            }
+
+            .nav {
+                height: 64px;
+            }
+
+            .secure-link {
+                display: none;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 74px 0 52px;
+            }
+
+            .visual {
+                min-height: 360px;
+            }
+
+            .metrics,
+            .grid.cols-2,
+            .grid.cols-3,
+            .grid.cols-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .milestone,
+            .job,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 62px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- TODO: Hapus halaman prototype sebelum rilis. -->
+    <!-- TODO: Ganti password server internal. Portal v3.4 sudah tidak dipakai untuk autentikasi. -->
+    <!-- Jangan lupa hapus Project Chronos dari sitemap sebelum audit eksternal. -->
+    <header class="topbar">
+        <nav class="shell nav" aria-label="Primary navigation">
+            <a class="brand" href="#home" aria-label="X-TECH Home">
+                <span class="brand-mark" aria-hidden="true"><span></span></span>
+                X-TECH
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#investors">Investor Relations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a class="secure-link" href="internal/research-xr-403.html" title="403 Restricted Access">Secure Portal</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="shell">
+                <div class="hero-grid">
+                    <div>
+                        <span class="eyebrow"><span class="pulse"></span> Advanced Research Company</span>
+                        <h1 class="glitch">Building the Future of Intelligence</h1>
+                        <p class="hero-lead">X-TECH is an advanced research and technology company focused on artificial intelligence, quantum computing, neural interfaces, and reality simulation technologies.</p>
+                        <p class="slogan">Engineering Tomorrow Beyond Reality.</p>
+                        <div class="actions">
+                            <a class="button primary" href="#about">Learn More</a>
+                            <a class="button" href="#research">Explore Research</a>
+                        </div>
+                    </div>
+                    <div class="visual" aria-label="Animated futuristic technology interface">
+                        <span class="node"></span>
+                        <span class="node"></span>
+                        <span class="node"></span>
+                        <span class="node"></span>
+                        <div class="interface-card">
+                            <div class="interface-row"><span>Neural Model Integrity</span><strong>99.982%</strong></div>
+                            <div class="interface-row"><span>Quantum Coherence Window</span><strong>41.8 ms</strong></div>
+                            <div class="interface-row"><span>Simulation Mesh</span><strong>Active</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metrics" aria-label="Company statistics">
+                    <div class="metric"><strong>4,800+</strong><span>Employees</span></div>
+                    <div class="metric"><strong>31</strong><span>Countries</span></div>
+                    <div class="metric"><strong>18</strong><span>Research Labs</span></div>
+                    <div class="metric"><strong>74</strong><span>Active Projects</span></div>
+                    <div class="metric"><strong>1,260</strong><span>Patents</span></div>
+                    <div class="metric"><strong>$8.4B</strong><span>Funding</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="shell">
+                <div class="section-head">
+                    <div>
+                        <div class="section-kicker">About X-TECH</div>
+                        <h2>Research infrastructure for the next industrial era.</h2>
+                    </div>
+                    <p>Founded by engineers, scientists, and operators from aerospace, computing, and frontier AI labs, X-TECH develops systems that make intelligence more capable, secure, and measurable.</p>
+                </div>
+
+                <div class="grid cols-4">
+                    <article class="card pad feature">
+                        <h3>History</h3>
+                        <p>Launched in Palo Alto in 2029, X-TECH began as a private research lab for high-assurance AI and quantum simulation before expanding into global deployment programs.</p>
+                    </article>
+                    <article class="card pad feature">
+                        <h3>Mission</h3>
+                        <p>Build frontier technologies that extend human capability while preserving safety, accountability, and institutional trust.</p>
+                    </article>
+                    <article class="card pad feature">
+                        <h3>Vision</h3>
+                        <p>A world where intelligence systems, quantum infrastructure, and human interfaces work together as dependable public-scale technology.</p>
+                    </article>
+                    <article class="card pad feature">
+                        <h3>Ethics</h3>
+                        <p>Every program is reviewed by safety, security, and independent ethics boards before moving from research to applied deployment.</p>
+                    </article>
+                </div>
+
+                <div class="grid cols-3" style="margin-top:16px">
+                    <article class="card pad feature">
+                        <h3>Core Values</h3>
+                        <p>Clarity, courage, discretion, scientific rigor, operational excellence, and respect for the people affected by powerful systems.</p>
+                    </article>
+                    <article class="card pad feature">
+                        <h3>Global Offices</h3>
+                        <p>Palo Alto, Seattle, Toronto, London, Zurich, Singapore, Tokyo, Seoul, and Canberra support regional research and deployment partnerships.</p>
+                    </article>
+                    <article class="card pad feature">
+                        <h3>Culture</h3>
+                        <p>Small teams, deep technical ownership, low politics, long time horizons, and a bias toward careful shipping over public spectacle.</p>
+                    </article>
+                </div>
+
+                <div class="grid cols-2" style="margin-top:16px">
+                    <article class="card pad">
+                        <h3>Innovation Principles</h3>
+                        <div class="chip-row">
+                            <span class="chip">Measure before scale</span>
+                            <span class="chip">Security by design</span>
+                            <span class="chip">Human oversight</span>
+                            <span class="chip">Auditable systems</span>
+                            <span class="chip">Long-term stewardship</span>
+                        </div>
+                    </article>
+                    <article class="card pad">
+                        <h3>Research Philosophy</h3>
+                        <p style="margin-top:10px">X-TECH pairs speculative research with hardened engineering. The company only promotes programs when theoretical progress, empirical validation, and deployment risk can be assessed together.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="research">
+            <div class="shell">
+                <div class="section-head">
+                    <div>
+                        <div class="section-kicker">Research</div>
+                        <h2>Eight divisions working across intelligence, matter, and perception.</h2>
+                    </div>
+                    <p>Research teams publish selective work, maintain private safety evaluations, and collaborate with universities, standards bodies, and national laboratories.</p>
+                </div>
+
+                <div class="grid cols-4">
+                    <article class="card pad research-card">
+                        <div><h3>Artificial Intelligence</h3><p>Foundation models, agent reliability, multimodal reasoning, and alignment evaluation.</p></div>
+                        <div class="chip-row"><span class="chip">X-Report 41</span><span class="chip">Dr. Mira Vale</span></div>
+                    </article>
+                    <article class="card pad research-card">
+                        <div><h3>Quantum Computing</h3><p>Error-corrected processors, quantum networking, and optimization under constrained coherence.</p></div>
+                        <div class="chip-row"><span class="chip">QX Lattice</span><span class="chip">Prof. Anton Wei</span></div>
+                    </article>
+                    <article class="card pad research-card">
+                        <div><h3>Machine Learning</h3><p>Data efficiency, robust training, inference acceleration, and benchmark-resistant evaluation.</p></div>
+                        <div class="chip-row"><span class="chip">ML Systems</span><span class="chip">Dr. Lena Ortiz</span></div>
+                    </article>
+                    <article class="card pad research-card">
+                        <div><h3>Neural Interface</h3><p>Non-invasive signal decoding, adaptive feedback loops, and clinical-grade safety protocols.</p></div>
+                        <div class="chip-row"><span class="chip">NeuroLinkage</span><span class="chip">Dr. Sami Haddad</span></div>
+                    </article>
+                    <article class="card pad research-card">
+                        <div><h3>Robotics</h3><p>Autonomous manipulation, simulation-to-reality transfer, and resilient field operations.</p></div>
+                        <div class="chip-row"><span class="chip">Field Lab 7</span><span class="chip">Iris Tan</span></div>
+                    </article>
+                    <article class="card pad research-card">
+                        <div><h3>Cyber Security</h3><p>AI-assisted threat modeling, secure enclaves, red-team automation, and post-quantum systems.</p></div>
+                        <div class="chip-row"><span class="chip">Sentinel Notes</span><span class="chip">Maya Singh</span></div>
+                    </article>
+                    <article class="card pad research-card">
+                        <div><h3>Digital Human</h3><p>Embodied agents, voice fidelity, personality consistency, and consent-aware identity systems.</p></div>
+                        <div class="chip-row"><span class="chip">Avatar Lab</span><span class="chip">Noah Reed</span></div>
+                    </article>
+                    <article class="card pad research-card">
+                        <div><h3>Reality Simulation</h3><p>World models, synthetic environments, causal testing, and high-fidelity scenario generation.</p></div>
+                        <div class="chip-row"><span class="chip">SimGrid</span><span class="chip">Dr. Hana Kovac</span></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="shell">
+                <div class="section-head">
+                    <div>
+                        <div class="section-kicker">Projects</div>
+                        <h2>Long-horizon programs moving from lab to platform.</h2>
+                    </div>
+                    <p>Some project records are intentionally sparse due to customer obligations, safety review, or export-control restrictions.</p>
+                </div>
+
+                <div class="projects-grid" aria-label="X-TECH project cards">
+                    <article class="card project">
+                        <span class="project-status">Active</span>
+                        <h3>Project CHRONOS</h3>
+                        <p>High-resolution forecasting environment for complex operational decisions.</p>
+                        <dl>
+                            <div><dt>Research Field</dt><dd>Reality Simulation</dd></div>
+                            <div><dt>Team</dt><dd>42 researchers</dd></div>
+                            <div><dt>Technology</dt><dd>Causal world models</dd></div>
+                            <div><dt>Timeline</dt><dd>2031-2036</dd></div>
+                        </dl>
+                    </article>
+                    <article class="card project">
+                        <span class="project-status">Pilot</span>
+                        <h3>Project ORION</h3>
+                        <p>Autonomous research agents for verified discovery workflows.</p>
+                        <dl>
+                            <div><dt>Research Field</dt><dd>Artificial Intelligence</dd></div>
+                            <div><dt>Team</dt><dd>68 researchers</dd></div>
+                            <div><dt>Technology</dt><dd>Tool-using foundation models</dd></div>
+                            <div><dt>Timeline</dt><dd>2030-2035</dd></div>
+                        </dl>
+                    </article>
+                    <article class="card project">
+                        <span class="project-status">Active</span>
+                        <h3>Project HELIOS</h3>
+                        <p>Secure quantum compute fabric for high-assurance simulation and optimization.</p>
+                        <dl>
+                            <div><dt>Research Field</dt><dd>Quantum Computing</dd></div>
+                            <div><dt>Team</dt><dd>51 researchers</dd></div>
+                            <div><dt>Technology</dt><dd>Fault-tolerant qubits</dd></div>
+                            <div><dt>Timeline</dt><dd>2029-2037</dd></div>
+                        </dl>
+                    </article>
+                    <article class="card project">
+                        <span class="project-status locked">Confidential</span>
+                        <h3>Project ECHO</h3>
+                        <p>Information unavailable.</p>
+                        <dl>
+                            <div><dt>Research Field</dt><dd>Redacted</dd></div>
+                            <div><dt>Team</dt><dd>Restricted</dd></div>
+                            <div><dt>Technology</dt><dd>Restricted</dd></div>
+                            <div><dt>Timeline</dt><dd>Restricted</dd></div>
+                        </dl>
+                    </article>
+                    <article class="card project">
+                        <span class="project-status">Applied</span>
+                        <h3>Project NEXUS</h3>
+                        <p>Human-machine interface layer for high-context analysis and control rooms.</p>
+                        <dl>
+                            <div><dt>Research Field</dt><dd>Neural Interface</dd></div>
+                            <div><dt>Team</dt><dd>39 researchers</dd></div>
+                            <div><dt>Technology</dt><dd>Adaptive feedback systems</dd></div>
+                            <div><dt>Timeline</dt><dd>2032-2036</dd></div>
+                        </dl>
+                    </article>
+                    <article class="card project">
+                        <span class="project-status locked">Classified</span>
+                        <h3>Project SENTINEL</h3>
+                        <p>Information unavailable.</p>
+                        <dl>
+                            <div><dt>Research Field</dt><dd>Restricted</dd></div>
+                            <div><dt>Team</dt><dd>Restricted</dd></div>
+                            <div><dt>Technology</dt><dd>Restricted</dd></div>
+                            <div><dt>Timeline</dt><dd>Restricted</dd></div>
+                        </dl>
+                    </article>
+                    <article class="card project">
+                        <span class="project-status locked">Access Restricted</span>
+                        <h3>Project GENESIS</h3>
+                        <p>Information unavailable.</p>
+                        <dl>
+                            <div><dt>Research Field</dt><dd>Restricted</dd></div>
+                            <div><dt>Team</dt><dd>Restricted</dd></div>
+                            <div><dt>Technology</dt><dd>Restricted</dd></div>
+                            <div><dt>Timeline</dt><dd>Restricted</dd></div>
+                        </dl>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="leadership">
+            <div class="shell">
+                <div class="section-head">
+                    <div>
+                        <div class="section-kicker">Leadership</div>
+                        <h2>Operators and scientists with frontier-scale experience.</h2>
+                    </div>
+                    <p>Leadership profiles include public biographical details. Some publications remain under partner review or security embargo.</p>
+                </div>
+
+                <div class="grid cols-4">
+                    <article class="card leader">
+                        <div class="portrait">AV</div>
+                        <div class="leader-body">
+                            <h3>Dr. Amelia Voss</h3>
+                            <p class="role">Chief Executive Officer</p>
+                            <p>Former aerospace systems executive leading X-TECH strategy and institutional partnerships.</p>
+                            <dl><dt>Education</dt><dd>PhD, Stanford</dd><dt>Previous</dt><dd>NASA JPL, AstraCore</dd><dt>Awards</dt><dd>Marconi Innovation Medal</dd><dt>Publications</dt><dd>38 peer-reviewed papers</dd></dl>
+                        </div>
+                    </article>
+                    <article class="card leader">
+                        <div class="portrait">EK</div>
+                        <div class="leader-body">
+                            <h3>Elias Kade</h3>
+                            <p class="role">Chief Technology Officer</p>
+                            <p>Architect of X-TECH's compute, security, and simulation infrastructure.</p>
+                            <dl><dt>Education</dt><dd>MS, MIT</dd><dt>Previous</dt><dd>OpenAI, Apple</dd><dt>Awards</dt><dd>ACM Systems Prize</dd><dt>Publications</dt><dd>24 technical papers</dd></dl>
+                        </div>
+                    </article>
+                    <article class="card leader">
+                        <div class="portrait">NL</div>
+                        <div class="leader-body">
+                            <h3>Nadia Laurent</h3>
+                            <p class="role">Chief Operating Officer</p>
+                            <p>Builds the operating model for global research labs and partner deployments.</p>
+                            <dl><dt>Education</dt><dd>MBA, INSEAD</dd><dt>Previous</dt><dd>Tesla, Anthropic</dd><dt>Awards</dt><dd>Global Ops 50</dd><dt>Publications</dt><dd>9 governance reports</dd></dl>
+                        </div>
+                    </article>
+                    <article class="card leader">
+                        <div class="portrait">MC</div>
+                        <div class="leader-body">
+                            <h3>Dr. Mara Chen</h3>
+                            <p class="role">Head of AI</p>
+                            <p>Leads model capability, alignment, and agent reliability programs.</p>
+                            <dl><dt>Education</dt><dd>PhD, Berkeley</dd><dt>Previous</dt><dd>DeepMind, Meta AI</dd><dt>Awards</dt><dd>NeurIPS Test of Time</dd><dt>Publications</dt><dd>61 papers</dd></dl>
+                        </div>
+                    </article>
+                    <article class="card leader">
+                        <div class="portrait">MS</div>
+                        <div class="leader-body">
+                            <h3>Maya Singh</h3>
+                            <p class="role">Director of Security</p>
+                            <p>Owns physical, cyber, model, and supply-chain security across X-TECH facilities.</p>
+                            <dl><dt>Education</dt><dd>MS, Carnegie Mellon</dd><dt>Previous</dt><dd>NSA, Cloudflare</dd><dt>Awards</dt><dd>Black Hat Pwnie</dd><dt>Publications</dt><dd>17 advisories</dd></dl>
+                        </div>
+                    </article>
+                    <article class="card leader">
+                        <div class="portrait">HK</div>
+                        <div class="leader-body">
+                            <h3>Dr. Hana Kovac</h3>
+                            <p class="role">Lead Scientist</p>
+                            <p>Principal scientist for reality simulation and synthetic evaluation environments.</p>
+                            <dl><dt>Education</dt><dd>PhD, ETH Zurich</dd><dt>Previous</dt><dd>CERN, NVIDIA</dd><dt>Awards</dt><dd>IEEE Pioneer Award</dd><dt>Publications</dt><dd>84 papers</dd></dl>
+                        </div>
+                    </article>
+                    <article class="card leader">
+                        <div class="portrait">BR</div>
+                        <div class="leader-body">
+                            <h3>Benjamin Roe</h3>
+                            <p class="role">Board Member</p>
+                            <p>Investor and former enterprise software founder advising capital strategy.</p>
+                            <dl><dt>Education</dt><dd>BA, Princeton</dd><dt>Previous</dt><dd>Ridge Capital</dd><dt>Awards</dt><dd>Forbes Midas List</dd><dt>Publications</dt><dd>5 market letters</dd></dl>
+                        </div>
+                    </article>
+                    <article class="card leader">
+                        <div class="portrait">IP</div>
+                        <div class="leader-body">
+                            <h3>Dr. Imani Park</h3>
+                            <p class="role">Board Member</p>
+                            <p>Bioethicist and policy advisor overseeing safety governance and public trust.</p>
+                            <dl><dt>Education</dt><dd>MD, Harvard</dd><dt>Previous</dt><dd>WHO, Oxford</dd><dt>Awards</dt><dd>MacArthur Fellow</dd><dt>Publications</dt><dd>46 papers</dd></dl>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="careers">
+            <div class="shell">
+                <div class="section-head">
+                    <div>
+                        <div class="section-kicker">Careers</div>
+                        <h2>Join teams building technologies most people only theorize about.</h2>
+                    </div>
+                    <p>X-TECH hires researchers, engineers, designers, operators, security specialists, and interns who can work with ambiguity and rigor.</p>
+                </div>
+
+                <div class="split">
+                    <div class="card pad">
+                        <h3>Open Positions</h3>
+                        <div class="job-list" style="margin-top:16px">
+                            <div class="job"><div><strong>Frontier AI Research Scientist</strong><br><span>Palo Alto / Hybrid</span></div><span>Full time</span></div>
+                            <div class="job"><div><strong>Quantum Systems Engineer</strong><br><span>Zurich</span></div><span>Full time</span></div>
+                            <div class="job"><div><strong>Security Operations Lead</strong><br><span>Seattle</span></div><span>Full time</span></div>
+                            <div class="job"><div><strong>Robotics Simulation Intern</strong><br><span>Toronto</span></div><span>Internship</span></div>
+                            <div class="job"><div><strong>Technical Program Manager</strong><br><span>Singapore</span></div><span>Full time</span></div>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <article class="card pad career-card">
+                            <h3>Benefits</h3>
+                            <p>Top-tier health plans, relocation support, compute credits, research sabbaticals, equity grants, and private mental health care.</p>
+                        </article>
+                        <article class="card pad career-card">
+                            <h3>Internship Program</h3>
+                            <p>Mentored 12-week placements for students working on publishable research or production systems with measurable impact.</p>
+                        </article>
+                        <article class="card pad career-card">
+                            <h3>Application Form</h3>
+                            <form onsubmit="handleApplication(event)">
+                                <label>Name<input name="name" required></label>
+                                <label>Email<input type="email" name="email" required></label>
+                                <label>Role<select name="role"><option>Frontier AI Research Scientist</option><option>Quantum Systems Engineer</option><option>Security Operations Lead</option><option>Internship Program</option></select></label>
+                                <button class="button primary" type="submit">Submit Application</button>
+                            </form>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news">
+            <div class="shell">
+                <div class="section-head">
+                    <div>
+                        <div class="section-kicker">News</div>
+                        <h2>Announcements from the company and research teams.</h2>
+                    </div>
+                    <p>For media inquiries, please contact press@x-tech.ai. Archived announcements before 2030 may require access review.</p>
+                </div>
+
+                <div class="grid cols-3">
+                    <article class="card pad news-card"><h3>X-TECH Opens Quantum Systems Lab in Zurich</h3><p>Corporate announcement expanding European research capacity for fault-tolerant computing.</p></article>
+                    <article class="card pad news-card"><h3>Reality Simulation Team Presents at SIGGRAPH</h3><p>Conference participation focused on synthetic environments for safety-critical testing.</p></article>
+                    <article class="card pad news-card"><h3>NEXUS Interface Wins Design Systems Award</h3><p>Industry recognition for human-centered controls in high-complexity decision rooms.</p></article>
+                    <article class="card pad news-card"><h3>Partnership with Northstar Medical Network</h3><p>Clinical research collaboration for non-invasive neural interface feedback protocols.</p></article>
+                    <article class="card pad news-card"><h3>ORION Agents Reach Internal Verification Milestone</h3><p>Research breakthrough in reproducible autonomous experiment planning.</p></article>
+                    <article class="card pad news-card"><h3>SimGrid Enterprise Platform Launch</h3><p>Product launch for secure scenario generation and operational stress testing.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section id="investors">
+            <div class="shell">
+                <div class="section-head">
+                    <div>
+                        <div class="section-kicker">Investor Relations</div>
+                        <h2>Disciplined capital for durable frontier infrastructure.</h2>
+                    </div>
+                    <p>X-TECH is privately held. Select reports are available to verified shareholders, strategic partners, and approved institutional analysts.</p>
+                </div>
+
+                <div class="grid cols-4">
+                    <article class="card pad feature"><h3>Funding Rounds</h3><p>Series E closed at $2.1B led by Meridian Ventures, Helix Capital, and sovereign technology funds.</p></article>
+                    <article class="card pad feature"><h3>Financial Reports</h3><p>Quarterly operating summaries, audited revenue notes, and risk disclosures for verified investors.</p></article>
+                    <article class="card pad feature"><h3>Annual Reports</h3><p>Research portfolio review, corporate impact, governance changes, and capital allocation priorities.</p></article>
+                    <article class="card pad feature"><h3>Governance</h3><p>Independent audit, safety, compensation, and public-interest committees report to the board.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline">
+            <div class="shell">
+                <div class="section-head">
+                    <div>
+                        <div class="section-kicker">Milestones</div>
+                        <h2>A decade of frontier systems moving into the real world.</h2>
+                    </div>
+                    <p>Dates reflect public announcements and verified partner disclosures.</p>
+                </div>
+                <div class="timeline">
+                    <div class="milestone"><time>2029</time><p>X-TECH incorporated in Palo Alto with a founding team from AI, aerospace, and quantum computing.</p></div>
+                    <div class="milestone"><time>2030</time><p>First secure compute campus opened and internal model evaluation framework approved by external advisors.</p></div>
+                    <div class="milestone"><time>2032</time><p>Project HELIOS demonstrated stable quantum optimization workloads for enterprise simulation partners.</p></div>
+                    <div class="milestone"><time>2034</time><p>Global labs expanded to 18 sites, including Zurich, Singapore, Toronto, and Canberra.</p></div>
+                    <div class="milestone"><time>2036</time><p>NEXUS and SimGrid entered commercial deployment with regulated industry customers.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partners">
+            <div class="shell">
+                <div class="section-head">
+                    <div>
+                        <div class="section-kicker">Technology Partners</div>
+                        <h2>Trusted by institutions that operate at global scale.</h2>
+                    </div>
+                    <p>Partner names shown here are representative program labels for public-facing collaboration areas.</p>
+                </div>
+                <div class="partners">
+                    <div class="partner">NORTHSTAR</div>
+                    <div class="partner">VECTOR GRID</div>
+                    <div class="partner">HELIX CLOUD</div>
+                    <div class="partner">ATLAS ENERGY</div>
+                    <div class="partner">KAIROS MED</div>
+                    <div class="partner">ORBITAL ONE</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="shell">
+                <div class="section-head">
+                    <div>
+                        <div class="section-kicker">Contact</div>
+                        <h2>Speak with the right team at X-TECH.</h2>
+                    </div>
+                    <p>Global headquarters: 4100 Page Mill Road, Palo Alto, CA. Office hours are Monday-Friday, 08:00-18:00 Pacific Time.</p>
+                </div>
+
+                <div class="split">
+                    <div class="card map" aria-label="Interactive map placeholder">
+                        <span class="map-pin"></span>
+                        <span class="map-pin"></span>
+                        <span class="map-pin"></span>
+                    </div>
+                    <div class="card pad">
+                        <h3>Business Inquiry</h3>
+                        <p style="margin:8px 0 18px">Email contact@x-tech.ai, media press@x-tech.ai, or call +1 650 555 0188.</p>
+                        <form onsubmit="handleContact(event)">
+                            <label>Full Name<input name="name" required></label>
+                            <label>Email<input type="email" name="email" required></label>
+                            <label>Company<input name="company"></label>
+                            <label>Inquiry Type<select name="type"><option>Business</option><option>Media</option><option>Investor Relations</option><option>Research Partnership</option></select></label>
+                            <label>Message<textarea name="message" required></textarea></label>
+                            <button class="button primary" type="submit">Send Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="shell footer-grid">
+            <div>
+                <div class="brand"><span class="brand-mark" aria-hidden="true"><span></span></span>X-TECH</div>
+                <p class="tiny">Copyright 2037 X-TECH Corporation. All rights reserved. X-TECH Portal v3.4 · Research Platform v5.1 · Archive sync: 03:17:00Z.</p>
+            </div>
+            <div class="footer-links">
+                <a href="errors/403.html">Privacy Policy</a>
+                <a href="errors/403.html">Terms of Service</a>
+                <a href="internal/">Security</a>
+                <a href="errors/404.html">Accessibility</a>
+                <a href="dokumen/">Press Kit</a>
+                <a href="errors/403.html">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="ghost" aria-hidden="true">
+        Employee ID XTE-0317-DELTA missing from leadership export.
+        Prototype directory /labs/genesis/ returns 403.
+        Level route: robots.txt -> sitemap.xml -> /arsip/ -> /chronos/.
+        Encrypted document: qx_audit_2034_final.pdf.enc.
+        QR archive seed: XT-ARCHIVE-14-NULL.
+        Unfinished page: /prototype/nexus-v0/.
+        Timestamp mismatch detected: 2041-11-03T03:17:00Z.
+    </div>
+
+    <script>
+        function notify(message) {
+            window.setTimeout(() => window.alert(message), 120);
+        }
+
+        function handleContact(event) {
+            event.preventDefault();
+            event.target.reset();
+            notify("Inquiry received. An X-TECH representative will respond after verification.");
+        }
+
+        function handleApplication(event) {
+            event.preventDefault();
+            event.target.reset();
+            notify("Application received. Recruiting will review your profile.");
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", (event) => {
+                const target = document.querySelector(anchor.getAttribute("href"));
+                if (!target) return;
+                event.preventDefault();
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+        });
+
+        document.querySelectorAll('a[data-restricted="true"]').forEach((link) => {
+            link.addEventListener("click", (event) => {
+                if (event.metaKey || event.ctrlKey) return;
+                event.preventDefault();
+                notify("403 Restricted Access");
+            });
+        });
+    </script>
+</body>
+</html>
